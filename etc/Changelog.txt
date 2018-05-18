@@ -1,0 +1,264 @@
+====================
+     05-12-2018
+====================
+
+   * device/sony/common/
+5e6d145  use default odm/build.prop for version check [Alin Jerpelea]
+   * kernel/sony/msm/
+0e99767ea178  Revert "android: binder: use copy_from_user_preempt_disabled" [Alin Jerpelea]
+3a3afd436fef  ANDROID: binder: Switch binder_deferred_lock to a spinlock. [Alin Jerpelea]
+6111b83f68bc  android: binder: Move buffer out of area shared with user space [Alin Jerpelea]
+305ff5e716a2  android: binder: Add allocator selftest [Alin Jerpelea]
+5255ad3309f2  android: binder: Refactor prev and next buffer into a helper function [Alin Jerpelea]
+c4f01d5f921b  binder: always allocate/map first BINDER_MIN_ALLOC pages [Alin Jerpelea]
+8ac13af0105c  Add BINDER_GET_NODE_DEBUG_INFO ioctl [Alin Jerpelea]
+a51ab65248ec  ANDROID: binder: call poll_wait() unconditionally. [Alin Jerpelea]
+6375dda4005d  ANDROID: binder: don't queue async transactions to thread. [Alin Jerpelea]
+9bfb2d2fbd30  ANDROID: binder: fix race in thread cleanup. [Alin Jerpelea]
+d3643955341a  ANDROID: binder: correctly initialize ref to zombie node. [Alin Jerpelea]
+55722bc3451d  binder: fix rb_insert_color crash [Alin Jerpelea]
+d8e5866c4793  binder: add target pid:tid to transaction failed message [Alin Jerpelea]
+cb91cb820505  Revert "binder: clear rb nodes before inserting" [Alin Jerpelea]
+c4832fa8fba1  ANDROID: binder: don't check prio permissions on restore. [Alin Jerpelea]
+c950b6967782  ANDROID: binder: fix death race conditions. [Alin Jerpelea]
+46d0cd8cb9f7  binder: clear rb nodes before inserting [Alin Jerpelea]
+2cadf919839b  binder: allow binder_alloc_get_user_buffer_offset when proc dying [Alin Jerpelea]
+8292467aae95  binder: eliminate possible OOO mutex acq in binder_mmap [Alin Jerpelea]
+61ebec7c9cbf  binder: use atomic for transaction_log index [Alin Jerpelea]
+677fd02bbc96  ANDROID: binder: improve priority inheritance for oneway. [Alin Jerpelea]
+6c0e7eea9c95  ANDROID: binder: add min sched_policy to node. [Alin Jerpelea]
+27a007599389  ANDROID: binder: Add tracing for binder priority inheritance. [Alin Jerpelea]
+fa1eb1a9368b  ANDROID: binder: do proper priority inheritance checking. [Alin Jerpelea]
+e9c326ec3670  ANDROID: binder: blacklist %p kptr_restrict [Alin Jerpelea]
+e16ed2dc7d68  binder: protect against stale pointers in print_binder_transaction [Alin Jerpelea]
+1cac6e459292  binder: protect against two threads freeing buffer [Alin Jerpelea]
+4de3f886ebe7  binder: guarantee txn complete / errors delivered in-order [Alin Jerpelea]
+9900692df655  ANDROID: binder: improve priority inheritance. [Alin Jerpelea]
+992efd298c2c  ANDROID: binder: push new transactions to waiting threads. [Alin Jerpelea]
+7715c06a8383  ANDROID: binder: remove proc waitqueue. [Alin Jerpelea]
+5b1eb0cde7a7  binder: add missing locks for transaction_stack and return_error [Alin Jerpelea]
+b6b96e71ae53  ANDROID: binder: add hwbinder,vndbinder to BINDER_DEVICES. [Alin Jerpelea]
+e5a67169dc94  binder: allow new refs to zombie nodes if other refs exist [Alin Jerpelea]
+f846ae165b5d  binder: make FIFO inheritance a per-context option [Alin Jerpelea]
+39090dd08b90  binder: add log information for binder transaction failures [Alin Jerpelea]
+d180081ac5c1  binder_alloc: prevent possible OOO mutex acquisition [Alin Jerpelea]
+441ead0fa25e  binder: fix false BUG_ON [Alin Jerpelea]
+d4a276645ec5  binder: avoid using strong references on nodes for internal refs [Alin Jerpelea]
+43d07f3ff650  binder: make inc/ref user commands atomic with node state [Alin Jerpelea]
+9ecc56229ec5  binder: prevent long delays in zombie reaping [Alin Jerpelea]
+c2f0277b3ab6  binder: protect enqueuing of death notifications [Alin Jerpelea]
+4dbb0ebdf503  ANDROID: binder: add more debug info when allocation fails. [Alin Jerpelea]
+cc59f10fad41  binder: read thread sequence number on every iteration when reaping [Alin Jerpelea]
+0186e25b545e  binder: make active thread sequence counter 64-bit [Alin Jerpelea]
+226201e13ae1  binder: prevent new refs to zombie nodes [Alin Jerpelea]
+9e5fa8c09f2f  android: binder: use copy_from_user_preempt_disabled [Alin Jerpelea]
+824a978bbeea  binder: use group leader instead of open thread [Alin Jerpelea]
+1f63de3c514a  android: binder: don't change schedpolicy for oneway calls. [Alin Jerpelea]
+6256c0e3aa27  android: binder: have threads inherit scheduling policy. [Alin Jerpelea]
+ce2e2bfe8b57  binder: remove global binder lock [Alin Jerpelea]
+924692b79f02  binder: ensure binder_node has reference when starting transaction [Alin Jerpelea]
+25d9faea18a7  binder: fix use-after-free discovered with KASAN [Alin Jerpelea]
+482e07795e88  binder: return BR_DEAD_REPLY if target proc is dying [Alin Jerpelea]
+913c5c033574  binder: fix possible race with put_files_struct [Alin Jerpelea]
+f4d6292efb86  binder: Make sure BR_TRANSACTION_COMPLETE is handled before reply [Alin Jerpelea]
+6a2d2c1e8bce  binder: fix thread hangs waiting for proc work [Alin Jerpelea]
+b4025895f4ce  binder: don't modify thread->looper from other threads [Alin Jerpelea]
+96204e67eea2  binder: Fix overly strict assertion in binder_pop_transaction [Alin Jerpelea]
+ffaea0a26b79  binder: make sure todo lists are handled in-order [Alin Jerpelea]
+eb344fd54eae  binder: fix binder_ref delete-before-add race [Alin Jerpelea]
+3ea34002f34c  binder: fix race condition between delete/add new ref on node [Alin Jerpelea]
+141d0058e3c6  binder: add zombie list to cleanup dead refs [Alin Jerpelea]
+c6ff79d62093  binder: add active thread tracking and deferred free [Alin Jerpelea]
+7a8499ecc328  binder: add locking for print functions [Alin Jerpelea]
+284eb8b2685d  binder: add spinlocks to protect proc, node, thread, and ref [Alin Jerpelea]
+8bab20a99f51  binder: add spinlocks to protect todo lists [Alin Jerpelea]
+e3662e1a0b41  binder: use atomics for weak/strong counters [Alin Jerpelea]
+c5bab9ce8da5  binder: change binder_stats to atomics [Alin Jerpelea]
+c7b999c3d682  binder: use mutexes for non-perf cases [Alin Jerpelea]
+f9c50ad586c3  binder: move binder allocator to separate file [Alin Jerpelea]
+5c65ca2043c5  binder: use mutex for binder allocator [Alin Jerpelea]
+e5f59fdb492a  binder: separate binder allocator structure from binder proc [Alin Jerpelea]
+045da3750149  Revert "android: binder: move global binder state into context struct." [Alin Jerpelea]
+e0d7dd63deaf  Revert "binder: use group leader instead of open thread" [Alin Jerpelea]
+ac465cd4806e  Revert "Revert "Revert "CHROMIUM: android: binder: Fix potential scheduling-while-atomic""" [Alin Jerpelea]
+6f2d10ae8b97  Revert "ANDROID: binder: fix format specifier for type binder_size_t" [Alin Jerpelea]
+7d2e3a701950  Revert "ANDROID: binder: add hwbinder,vndbinder to BINDER_DEVICES." [Alin Jerpelea]
+4564e66cc5ae  Revert "Revert "Revert "Revert "CHROMIUM: android: binder: Fix potential scheduling-while-atomic"""" [Alin Jerpelea]
+ac63d8255fe8  Revert "Revert "android: binder: move global binder state into context struct."" [Alin Jerpelea]
+cb31f07e2cf0  Revert "FROMLIST: binder: Use wake up hint for synchronous transactions." [Alin Jerpelea]
+0a8b87ba3d65  Revert "FROMLIST: binder: separate binder allocator structure from binder proc" [Alin Jerpelea]
+bd203adf2a54  Revert "FROMLIST: binder: remove unneeded cleanup code" [Alin Jerpelea]
+9d0aa2fbeb45  Revert "FROMLIST: binder: separate out binder_alloc functions" [Alin Jerpelea]
+84fa69b56a5a  Revert "FROMLIST: binder: move binder_alloc to separate file" [Alin Jerpelea]
+d1e8f1e2ccd5  Revert "FROMLIST: binder: remove binder_debug_no_lock mechanism" [Alin Jerpelea]
+962d0684355b  Revert "FROMLIST: binder: add protection for non-perf cases" [Alin Jerpelea]
+856c1b354521  Revert "FROMLIST: binder: change binder_stats to atomics" [Alin Jerpelea]
+00e44df90928  Revert "FROMLIST: binder: make binder_last_id an atomic" [Alin Jerpelea]
+4843268abf8d  Revert "FROMLIST: binder: add log information for binder transaction failures" [Alin Jerpelea]
+02c005f3698c  Revert "FROMLIST: binder: refactor queue management in binder_thread_read" [Alin Jerpelea]
+8e0459925f63  Revert "FROMLIST: binder: avoid race conditions when enqueuing txn" [Alin Jerpelea]
+42ee7a2427b8  Revert "FROMLIST: binder: don't modify thread->looper from other threads" [Alin Jerpelea]
+3b59f1029898  Revert "FROMLIST: binder: remove dead code in binder_get_ref_for_node" [Alin Jerpelea]
+11255676d13f  Revert "FROMLIST: binder: protect against two threads freeing buffer" [Alin Jerpelea]
+ad7cf79408cb  Revert "FROMLIST: binder: add more debug info when allocation fails." [Alin Jerpelea]
+709fa1e8bc94  Revert "FROMLIST: binder: use atomic for transaction_log index" [Alin Jerpelea]
+a54f2944e6a4  Revert "FROMLIST: binder: refactor binder_pop_transaction" [Alin Jerpelea]
+568156ac3bfb  Revert "FROMLIST: binder: guarantee txn complete / errors delivered in-order" [Alin Jerpelea]
+858c053e207f  Revert "FROMLIST: binder: make sure target_node has strong ref" [Alin Jerpelea]
+b4bd87a97aae  Revert "FROMLIST: binder: make sure accesses to proc/thread are safe" [Alin Jerpelea]
+4eb5be7402d8  Revert "FROMLIST: binder: refactor binder ref inc/dec for thread safety" [Alin Jerpelea]
+1b6c79feddb2  Revert "FROMLIST: binder: use node->tmp_refs to ensure node safety" [Alin Jerpelea]
+da946873a29c  Revert "FROMLIST: binder: introduce locking helper functions" [Alin Jerpelea]
+a53611fe0abe  Revert "FROMLIST: binder: use inner lock to sync work dq and node counts" [Alin Jerpelea]
+d748439f84c7  Revert "FROMLIST: binder: add spinlocks to protect todo lists" [Alin Jerpelea]
+12db28cd16b0  Revert "FROMLIST: binder: add spinlock to protect binder_node" [Alin Jerpelea]
+764b8cdc6fa7  Revert "FROMLIST: binder: protect proc->nodes with inner lock" [Alin Jerpelea]
+c1a992acd9df  Revert "FROMLIST: binder: protect proc->threads with inner_lock" [Alin Jerpelea]
+b12fb118bc37  Revert "FROMLIST: binder: protect transaction_stack with inner lock." [Alin Jerpelea]
+d2486f067336  Revert "FROMLIST: binder: use inner lock to protect thread accounting" [Alin Jerpelea]
+4acbaae33fa3  Revert "FROMLIST: binder: protect binder_ref with outer lock" [Alin Jerpelea]
+7ccef1aee56f  Revert "FROMLIST: binder: protect against stale pointers in print_binder_transaction" [Alin Jerpelea]
+d8387d0a08a3  Revert "FROMLIST: binder: fix death race conditions" [Alin Jerpelea]
+546a5cb647df  Revert "FROMLIST: binder: remove global binder lock" [Alin Jerpelea]
+f0baa27fa6ce  Revert "ANDROID: binder: remove proc waitqueue" [Alin Jerpelea]
+014393c83fc0  Revert "ANDROID: binder: push new transactions to waiting threads." [Alin Jerpelea]
+3b3fdab07760  Revert "ANDROID: binder: add support for RT prio inheritance." [Alin Jerpelea]
+b3a64552cd83  Revert "ANDROID: binder: add min sched_policy to node." [Alin Jerpelea]
+47da26205a2c  Revert "ANDROID: binder: improve priority inheritance." [Alin Jerpelea]
+43b75f7a0c26  Revert "ANDROID: binder: add RT inheritance flag to node." [Alin Jerpelea]
+b240431a08cc  Revert "Add BINDER_GET_NODE_DEBUG_INFO ioctl" [Alin Jerpelea]
+f2aa71259bec  Revert "ANDROID: binder: don't check prio permissions on restore." [Alin Jerpelea]
+ddb608ea101a  Revert "FROMLIST: binder: fix memory corruption in binder_transaction binder" [Alin Jerpelea]
+79255dfbb5b9  Revert "ANDROID: binder: fix use-after-free in binder_transaction()" [Alin Jerpelea]
+4eab270b1aaf  Revert "ANDROID: binder: Switch binder_deferred_lock to a spinlock." [Alin Jerpelea]
+   * vendor/opengapps/sources/all/
+9acf0a6  Google News all-19 5.0.0 (nodpi) [Nicholas Buse]
+   * vendor/opengapps/sources/arm/
+ce3136c  Google (beta) arm-21 8.3.7.21.arm (320) [Nicholas Buse]
+   * vendor/opengapps/sources/arm64/
+0fa8198  Google (beta) arm64-21 8.3.7.21.arm64 (nodpi) [Nicholas Buse]
+====================
+     05-11-2018
+====================
+
+   * device/sony/blanc/
+ec5690c  Merge pull request #6 from kholk/master [GitHub]
+02a8ea0  Add ToF focus calibration XML for MicroCommunicator Auto Focus [Angelo G. Del Regno]
+   * device/sony/loire/
+0bac604  Set the default IRQ affinity to the primary cluster. [Alin Jerpelea]
+   * device/sony/nile/
+758e849  Set the default IRQ affinity to the primary cluster. [Alin Jerpelea]
+   * device/sony/tone/
+120560d  Merge pull request #124 from ab123321/smp-irq-fix [GitHub]
+c49654b  Fix the default IRQ affinity to the primary cluster. [Artem Labazov]
+9b797b8  Set the default IRQ affinity to the primary cluster. [Alin Jerpelea]
+   * device/sony/yoshino/
+17c84fb  Set the default IRQ affinity to the primary cluster. [Alin Jerpelea]
+   * hardware/sony/   *ion/
+0fd2849  Merge pull request #3 from kholk/master [GitHub]
+48b56a3  ucommsvr: rc: Grant input group permissions to MicroCommunicator [Angelo G. Del Regno]
+99b8da9  Introduce MicroCommunicator V2: Focus Extravaganza [Angelo G. Del Regno]
+b3a407b  Introduce libpolyreg: Polynomial regression data fitting algorithm [Angelo G. Del Regno]
+   * kernel/sony/msm/
+66b10eaf0f16  Merge pull request #1641 from nathanchance/stable [GitHub]
+====================
+     05-10-2018
+====================
+
+   * build/make/
+cd78cff8b  build: use Pixel sounds (1/2) [David]
+971c95226  build: Add Changelog [1/3] [David]
+4ea91b0cd  build: personalize all zip names [David]
+d52d2a8a1  build: see only BUILD_ID in Number Build [David]
+c8b7c8d17  build: inherit gms.mk [David]
+9c387d2e9  envsetup: use $(CURDIR) for getting current directory [David]
+c382ce968  build: work around missing readlink -f on Mac [David]
+0ca66e74d  envsetup: set OUT_DIR to an absolute path always [David]
+aa30d4227  build: Fix inheritance of PRODUCT_PROPERTY_OVERRIDES for new audio files [David]
+   * device/sony/common/
+a7bff88  Merge pull request #480 from bartcubbins/master_qmuxd [GitHub]
+126bb25  rootdir: Android.mk: Add msm8916 to qmuxd.rc service barrier [Pavel Dubrova]
+74bd8b1  hardware: qcom: enable suport for sdm845 [Alin Jerpelea]
+7e7c499  Merge pull request #479 from luk1337/patch-27 [GitHub]
+   * device/sony/yoshino/
+9cb29f0  Revert "sensors: disable step detector" [Alin Jerpelea]
+   * frameworks/av/
+73c78cff3  stagefright: Fix SurfaceMediaSource buffer search condition when buffer return [David]
+905fce1c4  audioflinger: Fix audio for WifiDisplay [David]
+21669ec0b  camera: Fix high battery drain after using flashlight [David]
+65a850c03  Increase max screen recording time from 3 minutes to 1 hour [David]
+   * frameworks/base/
+b01b708ab4d  frameworks: Add custom reboot options [David]
+cce5cc9c3e6  Add camera key long press handling [David]
+80b9e0e4149  storage: Set all sdcards to visible [David]
+1881c1737c1  SettingsProvider: adaptive icon [David]
+b6e97a207ef  SystemUI: disable statusbar time refresh when screen off [David]
+d919e2cf30a  Keyguard: don't refresh ui when screen off [David]
+5ae6d604db4  NfcTile: use Oreo style [David]
+878f126eec0  SettingsProvider: Add missing INTERACT_ACROSS_USERS_FULL permission [David]
+73ae881a28b  Add missing STORAGE_INTERNAL permission for BackupRestoreConfirmation [David]
+60bf06c9e9d  [1/2]Base: Factor out preference-in-storage check to overridable method. [David]
+fdfbd0ea9a3  FIX No sim - airplane mode padding [David]
+588cc007c18  SystemUI: fix MediaProjection cast crash [David]
+   * system/core/
+9d98da48f  healthd: charger: Add board overrides in mode_charger [David]
+98307525e  Revert "healthd: restructure healthd_mode_charger" [David]
+ab558df8f  Allow firmware loading from ODM partition [David]
+f19cc3f55  add odm partition to ld.config.legacy [David]
+2c097180d  core: host: remove ads [David]
+53659fc14  core: stop flash recovery service by AOSP [David]
+====================
+     05-09-2018
+====================
+
+   * device/sony/common/
+3501feb  Return "0" as duty pcts when brightness is equal 0 [LuK1337]
+dd97bbc  switch to qcom keymaster HIDL [Alin Jerpelea]
+fce31e2  Merge pull request #478 from luk1337/patch-26 [GitHub]
+bc82ae9  Media volume: from 15 to 25 steps [LuK1337]
+cff4a2c  Set voice call volume steps to 7 [LuK1337]
+   * device/sony/sepolicy/
+dec1a5c  update Sepolicy for KM/GK HAL [Alin Jerpelea]
+e8b842c  allow adsprpcd to read vendor [Alin Jerpelea]
+   * frameworks/native/
+27c490022  Fix installd get wrong inode cause APK crash [David]
+====================
+     05-08-2018
+====================
+
+   * device/sony/common/
+2012305  vendor: increment vendor version [Alin Jerpelea]
+   * device/sony/discovery/
+79d8bf1  SAR: add TransPowerSensors package [Alin Jerpelea]
+   * device/sony/dora/
+2cf597f  SAR: add TransPowerSensors package [Alin Jerpelea]
+   * device/sony/kagura/
+4c09187  SAR: add TransPowerSensors package [Alin Jerpelea]
+   * device/sony/keyaki/
+263fae3  SAR: add TransPowerSensors package [Alin Jerpelea]
+   * device/sony/kugo/
+224f8c9  SAR: add TransPowerSensors package [Alin Jerpelea]
+   * device/sony/lilac/
+1bc4a70  SAR: add TransPowerSensors package [Alin Jerpelea]
+   * device/sony/loire/
+2d5a63e  declare TARGET_LEGACY_KEYMASTER [Alin Jerpelea]
+a32c494  remove unused keystore package [Alin Jerpelea]
+   * device/sony/maple/
+6e7edff  SAR: add TransPowerSensors package [Alin Jerpelea]
+   * device/sony/nile/
+c775da1  remove unused keystore package [Alin Jerpelea]
+   * device/sony/pioneer/
+5b804c4  SAR: add TransPowerSensors package [Alin Jerpelea]
+   * device/sony/poplar/
+6915cf4  SAR: add TransPowerSensors package [Alin Jerpelea]
+   * device/sony/sepolicy/
+2c8753f  KM/GK: Add Sepolicy for KM/GK HAL [Alin Jerpelea]
+   * device/sony/suzu/
+e302568  SAR: add TransPowerSensors package [Alin Jerpelea]
+   * device/sony/tone/
+09dcc82  remove unused keystore package [Alin Jerpelea]
+   * device/sony/yoshino/
+37f08cf  remove unused keystore package [Alin Jerpelea]
+   * hardware/sony/transpower/
+ecfdd8a  Bump app version (2.1.0) [Zoran Jovanovic]
+4721ca5  Implementation of libpower [Zoran Jovanovic]
